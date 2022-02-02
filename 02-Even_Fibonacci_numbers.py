@@ -1,12 +1,14 @@
-roof = 4000000
-fib = [1,2]
-total = 0
+def fibSeq(dig1, dig2, roof):
+	fib = [dig1, dig2]
+	while fib[-1] <= roof:
+		fib.append(fib[-1] + fib[-2])
+	return(fib)
 
-while fib[-1] <= roof:
-	print(fib)
-	fib.append(fib[-1] + fib[-2])
+def fibSum(dig1, dig2, roof):
+	total = 0
+	for i in fibSeq(dig1, dig2, roof):
+		if i % 2 == 0:
+			total += i
+	return(total)
 
-for i in fib:
-	if i % 2 == 0:
-		total += i
-print(total)
+print(fibSum(1, 2, 4000000))
