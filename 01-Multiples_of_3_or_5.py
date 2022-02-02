@@ -1,17 +1,17 @@
-roof = 1000
-floor = 0
-step = 0
-mult1 = 3
-mult2 = 5
-total = 0
+def multiples(factors, roof):
+	mults = []
+	for i in factors:
+		step = i
+		while step < roof:
+			if step not in mults:
+				mults.append(step)
+			step += i
+	return(mults)
 
-while step <= 1000:
-	print("Step is", step)
-	print("Total is", total)
-	if step % mult1 == 0 and step % mult2 == 0:
-		total += step
-	elif step % mult1 == 0:
-		total += step
-	elif step % mult2 == 0:
-		total += step
-	step += 1
+def sumMultiples(factors, roof):
+	total = 0
+	for i in multiples(factors, roof):
+		total += i
+	return(total)
+
+print(sumMultiples([3, 5], 1000))
