@@ -1,11 +1,10 @@
 from tracemalloc import stop
-import utilities.primeGen as primeGen
+from luckinUtils import primeGen
 import math
 
-num = 600851475143
+def lrgPrimeFact(num):
+	for i in primeGen(int(math.sqrt(num)))[::-1]:
+		if num % i == 0:
+			return(i)
 
-possibleFactors = primeGen.genRoof(int(math.sqrt(num)))[::-1]
-
-for i in possibleFactors:
-	if num % i == 0:
-		print(i)
+print(lrgPrimeFact(600851475143))
