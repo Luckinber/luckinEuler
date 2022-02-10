@@ -1,5 +1,4 @@
-from luckinUtils import primeGen	
-import time	
+from luckinUtils import primeGen
 
 def smallestDivis(roof):
 	result = 1
@@ -8,7 +7,5 @@ def smallestDivis(roof):
 			prime *= prime
 		result *= prime		
 	return result
-
-start = time.time()
+	
 print(smallestDivis(20))
-print("Exec time is", '{:f}'.format(time.time()-start), "seconds")
