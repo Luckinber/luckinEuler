@@ -20,4 +20,3 @@ def primeGen(roof):
 		if primesIndex[i] == 1:
 			primes.append(i)
 	return(primes)
-
